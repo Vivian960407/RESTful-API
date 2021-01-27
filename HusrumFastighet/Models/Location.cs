@@ -14,7 +14,7 @@ namespace HusrumFastighet.Models
         public string Apartment { get; set; } = string.Empty;
         public List<Door> Doors { get; set; } = new();
         public List<Log> Log { get; set; } = new();
-        public List<Tenant> Tenant { get; set; } = new();
+        public List<Tenant>? Tenant { get; set; } = new();
 
     }
 }

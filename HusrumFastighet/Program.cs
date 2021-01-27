@@ -17,9 +17,15 @@ namespace HusrumFastighet
 
             var Test = new Controller.DoorEventsLog();
             Test._MaxEnteries = 20;
-            var Result = Test.FindEntriesByLocation("0301");
-            foreach (var item in Result)
-                Console.WriteLine($"x {item.Tenant.TenantName} time {item.Time} lala {item.Location.Apartment}");
+
+            //var Result = Test.FindEntriesByLocation("0301");
+
+            //foreach (var item in Result)
+            //Console.WriteLine($"x {item.Tenant.TenantName} time {item.Time} lala {item.Location.Apartment}");
+
+            //var z = Test.AddTenant("Zizi");
+            //z = Test.MoveTenant("Zizi", "0301");
+            var x = Test.MoveTenant("Zizi","");
         }
     }
 }

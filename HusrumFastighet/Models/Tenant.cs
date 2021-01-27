@@ -11,6 +11,7 @@ namespace HusrumFastighet.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        public int? ApartmentID { get; set; } 
         public Location? Apartment { get; set; }
         public string TenantName { get; set; } = string.Empty;
         public string? Tag { get; set; } = string.Empty;

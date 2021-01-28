@@ -12,6 +12,8 @@ namespace HusrumFastighet.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string EventCode { get; set; } = string.Empty;
+        public string? Note { get; set; }
+        public string? Note2 { get; set; }
         public List<Log> Log { get; set; } = new();
     }
 }

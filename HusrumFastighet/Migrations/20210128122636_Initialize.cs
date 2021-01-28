@@ -25,7 +25,9 @@ namespace HusrumFastighet.Migrations
                 {
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    EventCode = table.Column<string>(type: "TEXT", nullable: false)
+                    EventCode = table.Column<string>(type: "TEXT", nullable: false),
+                    Note = table.Column<string>(type: "TEXT", nullable: true),
+                    Note2 = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -10,9 +10,17 @@ namespace HusrumFastighet.Controller
 {
     class DoorEventsLog
     {
+        /// <summary>
+        /// The only intressting property here is MaxEntries which needs to get asigned a value whenever 
+        /// the search methods are going to get used. It indicates the number of rows that will appear in
+        /// search results (aka number of elements in the result list)
+        /// </summary>
         HouseContextFactory ContextFactory = new HouseContextFactory();
+
         int MaxEnteries;
+
         private string[] args { get; set; }
+
         List<Models.Log> result { get; set; } = new();
        
         public int _MaxEnteries
@@ -21,6 +29,11 @@ namespace HusrumFastighet.Controller
             set { MaxEnteries = value; }
         }
 
+        /// <summary>
+        /// The Following Methods named Find... are pretty much self explanatory
+        /// Give them for ex a door and they give you all logs aka entries trough that door
+        /// and so on
+        /// </summary>
         public List<Models.Log> FindEntriesByDoor(string input)
         {
             using var @dbContext = ContextFactory.CreateDbContext(args);
@@ -101,7 +114,11 @@ namespace HusrumFastighet.Controller
             return log;
         }
         
-
+        /// <summary>
+        /// This method takes an apartment number and gives back all the tenants who live there
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public List<Models.Tenant> ListTenantAt(string input)
         {
             using var @dbContext = ContextFactory.CreateDbContext(args);
@@ -115,6 +132,9 @@ namespace HusrumFastighet.Controller
         /// <summary>
         /// date format: ddmmyyyy
         /// time format: hhmm
+        /// ***
+        /// The method can be used to register new logs if imaginary for exampel tenants or locations
+        /// are sent to this method, the log will not get registered and it will return a false bool
         /// </summary>
         /// <param name="date"></param>
         /// <param name="time"></param>
@@ -150,7 +170,13 @@ namespace HusrumFastighet.Controller
             }
         }
 
-
+        /// <summary>
+        /// This one either takes in a name/tag and an empty string in order to register the tenant's departure 
+        /// or takes in a name/tag and an apartment number in order to register the tenant's residency in that apartment
+        /// </summary>
+        /// <param name="input1"></param>
+        /// <param name="input2"></param>
+        /// <returns></returns>
         public bool MoveTenant(string input1, string input2)
         {
             bool taskSuccession = true;
@@ -255,6 +281,12 @@ namespace HusrumFastighet.Controller
             }
         }
 
+        /// <summary>
+        /// Really and literally takes a name and adds it as a new tenant to the tenant table, will be used 
+        /// when a tenant hasn't been assigned a tag or an apartment 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public bool AddTenant(string input)
         {
             bool taskSuccession = true;

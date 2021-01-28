@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HusrumFastighet.Migrations
 {
     [DbContext(typeof(HouseContext))]
-    [Migration("20210127212356_Initialize")]
+    [Migration("20210128122636_Initialize")]
     partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,12 @@ namespace HusrumFastighet.Migrations
 
                     b.Property<string>("EventCode")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Note2")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");

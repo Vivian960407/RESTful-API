@@ -113,10 +113,10 @@ namespace HusrumFastighet.Database
                     //EVENTS
                     Models.Event E1, E2, E3, E4;
                     context.Events.AddRange(new[]{
-                    E1 = new Models.Event { EventCode = "DÖIN" },
-                    E2 = new Models.Event { EventCode = "DÖUT" },
-                    E3 = new Models.Event { EventCode = "FDIN" },
-                    E4 = new Models.Event { EventCode = "FDUT" },
+                    E1 = new Models.Event { EventCode = "DÖIN" , Note = "öppnade dörren till", Note2 = "utifrån"},
+                    E2 = new Models.Event { EventCode = "DÖUT" , Note = "öppnade dörren till", Note2 = "inifrån"},
+                    E3 = new Models.Event { EventCode = "FDIN" , Note = "försökte öppna dörren tiil", Note2 = "utifrån"},
+                    E4 = new Models.Event { EventCode = "FDUT" , Note = "försökte öppna dörren till", Note2 = "inifrån"},
                 });
                     context.SaveChanges();
 
@@ -133,8 +133,8 @@ namespace HusrumFastighet.Database
                     new Models.Log { Date = 23102020, Time = 1020, Door = DH, Location = LA, Tenant = TH, Event = E1},
                     new Models.Log { Date = 23102020, Time = 1019, Door = D7, Location = L4, Tenant =T6, Event = E2},
                     new Models.Log { Date = 23102020, Time = 1019, Door = DD, Location = L7, Tenant = TH, Event = E2},
-                    new Models.Log { Date = 23102020, Time = 1008, Door = D8, Location = L4, Tenant = T7, Event = E1},
-                    new Models.Log { Date = 23102020, Time = 1007, Door = D8, Location = L4, Tenant = T7, Event = E2},
+                    new Models.Log { Date = 23102020, Time = 1008, Door = D7, Location = L4, Tenant = T7, Event = E1},
+                    new Models.Log { Date = 23102020, Time = 1007, Door = D7, Location = L4, Tenant = T7, Event = E2},
 
                 });
                     context.SaveChanges();

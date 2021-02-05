@@ -19,19 +19,19 @@ namespace HusrumFastighet.View
 
             var result = test.FindEntriesByDoor("LGH0302");
             foreach (var item in result)
-                Console.WriteLine($"\nSearch by door: {item.Date}\t{item.Time}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
+                Console.WriteLine($"\nSearch by door: {item.DateTime}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
             result = test.FindEntriesByLocation("0201");
             foreach (var item in result)
-                Console.WriteLine($"\nSearch by location: {item.Date}\t{item.Time}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
+                Console.WriteLine($"\nSearch by location: {item.DateTime}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
             result = test.FindEntriesByTenant("Lucas Adolfsson");
             foreach (var item in result)
-                Console.WriteLine($"\nSearch by tenant: {item.Date}\t{item.Time}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
+                Console.WriteLine($"\nSearch by tenant: {item.DateTime}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
             result = test.FindEntriesByTag("0302A");
             foreach (var item in result)
-                Console.WriteLine($"\nSearch by tag: {item.Date}\t{item.Time}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
+                Console.WriteLine($"\nSearch by tag: {item.DateTime}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
             result = test.FindEntriesByEvent("DÖIN");
             foreach (var item in result)
-                Console.WriteLine($"\nSearch by event: {item.Date}\t{item.Time}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
+                Console.WriteLine($"\nSearch by event: {item.DateTime}\t{item.Event.EventCode}\t{item.Location.Apartment}\t{item.Tenant.Tag}\t{item.Tenant.TenantName}  {item.Event.Note} {item.Door.DoorCode} {item.Event.Note2} ");
         }
     }
 }

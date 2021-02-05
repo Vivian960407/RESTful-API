@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HusrumFastighet.Migrations
 {
     [DbContext(typeof(HouseContext))]
-    [Migration("20210128122636_Initialize")]
+    [Migration("20210205152952_Initialize")]
     partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,8 +90,8 @@ namespace HusrumFastighet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Date")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("DoorID")
                         .HasColumnType("INTEGER");
@@ -103,9 +103,6 @@ namespace HusrumFastighet.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("TenantID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Time")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");

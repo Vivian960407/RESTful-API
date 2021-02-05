@@ -143,7 +143,7 @@ namespace HusrumFastighet.Controller
         /// <param name="door_"></param>
         /// <param name="event_"></param>
         /// <returns></returns>
-        public bool LogEntry(int date, int time, string tenantName, string apartment, string door_, string event_)
+        public bool LogEntry(DateTime dateTime, string tenantName, string apartment, string door_, string event_)
         {
             bool taskSuccession = true;
             using var @dbContext = ContextFactory.CreateDbContext(args);
@@ -156,7 +156,7 @@ namespace HusrumFastighet.Controller
             {
                 if (tenant != null && location != null && door != null && @event != null)
                 {
-                    dbContext.Logs.Add(new Models.Log { Date = date, Time = time, Door = door, Location = location, Tenant = tenant, Event = @event });
+                    dbContext.Logs.Add(new Models.Log { DateTime = dateTime, Door = door, Location = location, Tenant = tenant, Event = @event });
                     dbContext.SaveChanges();
                     transaction.Commit();
                     return taskSuccession;

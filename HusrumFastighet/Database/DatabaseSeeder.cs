@@ -123,18 +123,18 @@ namespace HusrumFastighet.Database
 
                     //MOCK-LOGG
                     context.Logs.AddRange(new[]{
-                    new Models.Log { Date = 23102020, Time = 1104, Door = DB, Location = L6, Tenant = TG, Event = E1},
-                    new Models.Log { Date = 23102020, Time = 1103, Door = DB, Location = L6, Tenant = TG, Event = E2},
-                    new Models.Log { Date = 23102020, Time = 1056, Door = D9, Location = L5, Tenant = TA, Event = E1},
-                    new Models.Log { Date = 23102020, Time = 1055, Door = D9, Location = L5, Tenant = TA, Event = E2},
-                    new Models.Log { Date = 23102020, Time = 1022, Door = DD, Location = L7, Tenant = TH, Event = E1},
-                    new Models.Log { Date = 23102020, Time = 1021, Door = DH, Location = LA, Tenant = TH, Event = E2},
-                    new Models.Log { Date = 23102020, Time = 1020, Door = DI, Location = LB, Tenant = T6, Event = E2},
-                    new Models.Log { Date = 23102020, Time = 1020, Door = DH, Location = LA, Tenant = TH, Event = E1},
-                    new Models.Log { Date = 23102020, Time = 1019, Door = D7, Location = L4, Tenant =T6, Event = E2},
-                    new Models.Log { Date = 23102020, Time = 1019, Door = DD, Location = L7, Tenant = TH, Event = E2},
-                    new Models.Log { Date = 23102020, Time = 1008, Door = D7, Location = L4, Tenant = T7, Event = E1},
-                    new Models.Log { Date = 23102020, Time = 1007, Door = D7, Location = L4, Tenant = T7, Event = E2},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,11,04,0)  , Door = DB, Location = L6, Tenant = TG, Event = E1},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,11,03,0) , Door = DB, Location = L6, Tenant = TG, Event = E2},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,56,0) , Door = D9, Location = L5, Tenant = TA, Event = E1},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,55,0) , Door = D9, Location = L5, Tenant = TA, Event = E2},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,22,0) , Door = DD, Location = L7, Tenant = TH, Event = E1},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,21,0) , Door = DH, Location = LA, Tenant = TH, Event = E2},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,20,0) , Door = DI, Location = LB, Tenant = T6, Event = E2},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,20,0) , Door = DH, Location = LA, Tenant = TH, Event = E1},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,19,0) , Door = D7, Location = L4, Tenant =T6, Event = E2},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,19,0) , Door = DD, Location = L7, Tenant = TH, Event = E2},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,08,0) , Door = D7, Location = L4, Tenant = T7, Event = E1},
+                    new Models.Log { DateTime = new DateTime(2020,10,23,10,07,0) , Door = D7, Location = L4, Tenant = T7, Event = E2},
 
                 });
                     context.SaveChanges();

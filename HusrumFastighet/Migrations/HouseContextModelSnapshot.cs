@@ -88,8 +88,8 @@ namespace HusrumFastighet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Date")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("DoorID")
                         .HasColumnType("INTEGER");
@@ -101,9 +101,6 @@ namespace HusrumFastighet.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("TenantID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Time")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");

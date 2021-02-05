@@ -11,8 +11,7 @@ namespace HusrumFastighet.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        public int Time { get; set; }
-        public int Date { get; set; }
+        public DateTime DateTime { get; set; }
         public Event Event { get; set; }
         public Tenant Tenant { get; set; }
         public Door Door { get; set; }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HusrumFastighet.Migrations
 {
@@ -98,8 +99,7 @@ namespace HusrumFastighet.Migrations
                 {
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Time = table.Column<int>(type: "INTEGER", nullable: false),
-                    Date = table.Column<int>(type: "INTEGER", nullable: false),
+                    DateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     EventID = table.Column<int>(type: "INTEGER", nullable: false),
                     TenantID = table.Column<int>(type: "INTEGER", nullable: false),
                     DoorID = table.Column<int>(type: "INTEGER", nullable: false),

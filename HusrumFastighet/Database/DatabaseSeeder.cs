@@ -11,7 +11,7 @@ namespace HusrumFastighet.Database
     /// <summary>
     /// A classic Seeder class
     /// </summary>
-    class DatabaseSeeder
+    public class DatabaseSeeder
     {
         ///This property doesn't serve a real purpose besides that the CreatDbContext method from factory-class requires it as in-parameters 
         private string[] args { get; set; }
@@ -26,8 +26,8 @@ namespace HusrumFastighet.Database
        
         public void Seeder()
         {
-
-            FileInfo file = new FileInfo(@".\House.db");
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), @"VivianHouse.db");
+            FileInfo file = new FileInfo(path);
             if (!file.Exists)
             {
                 var contextFactory = new HouseContextFactory();

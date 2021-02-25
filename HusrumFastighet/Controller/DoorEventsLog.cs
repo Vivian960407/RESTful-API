@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HusrumFastighet.Controller
 {
-    class DoorEventsLog
+    public class DoorEventsLog
     {
         /// <summary>
         /// The only intressting property here is MaxEntries which needs to get asigned a value whenever 
@@ -143,19 +143,19 @@ namespace HusrumFastighet.Controller
         /// <param name="door_"></param>
         /// <param name="event_"></param>
         /// <returns></returns>
-        public bool LogEntry(DateTime dateTime, string tenantName, string apartment, string door_, string event_)
+        public bool LogEntry(DateTime dateTime, string tenantName, string door_, string event_)
         {
             bool taskSuccession = true;
             using var @dbContext = ContextFactory.CreateDbContext(args);
             var tenant = dbContext.Tenants.FirstOrDefault(t => t.TenantName == tenantName);
-            var location = dbContext.Locations.FirstOrDefault(l => l.Apartment == apartment);
             var door = dbContext.Doors.FirstOrDefault(d => d.DoorCode == door_);
             var @event = dbContext.Events.FirstOrDefault(e => e.EventCode == event_);
             using var transaction = dbContext.Database.BeginTransaction();
             try
             {
-                if (tenant != null && location != null && door != null && @event != null)
+                if (tenant != null && door != null && @event != null)
                 {
+                    var location = dbContext.Locations.FirstOrDefault(l => l.Doors.Contains(door));
                     dbContext.Logs.Add(new Models.Log { DateTime = dateTime, Door = door, Location = location, Tenant = tenant, Event = @event });
                     dbContext.SaveChanges();
                     transaction.Commit();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HusrumFastighet.Models
 {
-    class Door
+    public class Door
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }

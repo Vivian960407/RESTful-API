@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Design;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace HusrumFastighet.Database
     {
         public HouseContext CreateDbContext(string[] args)
         {
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), @"VivianHouse.db");
             var optionBuilder = new DbContextOptionsBuilder<HouseContext>();
-            optionBuilder.UseSqlite("Data Source = House.db");
-
+            optionBuilder.UseSqlite($"Data Source = {path}");
             return new HouseContext(optionBuilder.Options);
         }
     }

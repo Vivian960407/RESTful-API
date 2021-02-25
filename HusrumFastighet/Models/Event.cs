@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HusrumFastighet.Models
 {
-    class Event
+    public class Event
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
